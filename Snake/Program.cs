@@ -6,33 +6,22 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            
+            Point p1 = new Point();     // создали экземпляр класса Point (иными словами "объект")
+            p1.x = 1;                    // вписываем значения координат
+            p1.y = 3;
+            p1.sym = '*';
+            p1.Draw();
 
-            // Добавили символ * с координатами x и y .
-            int x1 = 1;
-            int y1 = 3;
-            char sym1 = '*';
+            Point p2 = new Point();
+            p2.x = 4;
+            p2.y = 5;
+            p2.sym = '#';
+            p2.Draw();
 
-            //Выведем символ на экран с помощью метода Draw описанным внизу
-            Draw(x1, y1, sym1);
-
-            // Добавили символ * с координатами x и y .
-            int x2 = 4;
-            int y2 = 5;
-            char sym2 = '#';
-
-            Draw(x2, y2, sym2);
 
             Console.ReadLine();
         }
         
-        /*Чтобы не испльзовать Copy Pass изменим наш код 
-         * добавив в него функцию которая будет выводить на жкран значения 
-         * координат которые мы им дадим. 
-        */
-        static void Draw(int x, int y, char sym)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
-        }
     }
 }
