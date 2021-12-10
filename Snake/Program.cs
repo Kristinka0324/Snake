@@ -14,8 +14,8 @@ namespace Snake
             HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
             VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            upLine.Drow();
-            downLine.Drow();
+            upLine.Draw();
+            downLine.Draw();
             leftLine.Draw();
             rightLine.Draw();
 
