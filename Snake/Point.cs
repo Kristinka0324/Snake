@@ -45,11 +45,11 @@ namespace Snake
             }
             if (direction == Direction.UP)
             {
-                y = y + offset;
-            }
-            if (direction == Direction.UP)
-            {
                 y = y - offset;
+            }
+            if (direction == Direction.DOWN)
+            {
+                y = y + offset;
             }
         }
 
@@ -65,11 +65,13 @@ namespace Snake
             sym = ' ';
             Draw();
         }
-    
+
 
         public override string ToString()
         {
             return x + ", " + y + ", " + sym;
         }
+
+    
     }
 }
