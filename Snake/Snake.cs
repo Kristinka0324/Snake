@@ -8,10 +8,12 @@ namespace Snake
 {
     class Snake : Figure  //змейка является некой фигурой на карте и состоит из точек
     {
-        public Snake(Point tail,int Length, Direction direction) //у змейки есть какая-то стартовая позиция на карте, tail 
+        Direction direction;
+        public Snake(Point tail,int Length, Direction _direction) //у змейки есть какая-то стартовая позиция на карте, tail 
                                                            //она находится в каких-то конкретных координатах, зададим ей длинну, Lenght
                                                            //и в каком будет двигаться направлении, direction
         {
+            direction = _direction;
             pList = new List<Point>();
             for(int i = 0; i < Length; i++)
             {
@@ -20,6 +22,25 @@ namespace Snake
                 pList.Add(p);                       //и добавиться в список
                                                // получается что получим length точек, которые будут добавлены в список
             }
+        }
+
+        internal void Move()
+        {
+            Point tail = pList.First();
+            pList.Remove( tail );
+            Point head = GetNextPoint();
+            pList.Add(head);
+
+            tail.Clear();
+            head.Draw();
+        }
+
+        public Point GetNextPoint()
+        {
+            Point head = pList.Last();
+            Point nextPoint = new Point(head);
+            nextPoint.Move(1, direction);
+            return nextPoint;
         }
     }
 }

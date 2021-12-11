@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Snake
 {
@@ -21,9 +22,26 @@ namespace Snake
 
             // Отрисовка точек
             Point p = new Point(4, 5, '*');
-            Snake snake = new Snake(p, 4, Direction.RIGHT); //создали класс Snake (Р это ее хвост, 4 это длинна, направление вправо.)
+            Snake snake = new Snake(p, 4, Direction.RIGHT ); //создали класс Snake (Р это ее хвост, 4 это длинна, направление вправо.)
             snake.Draw();
+            snake.Move();
+
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
         }
-        
     }
 }
